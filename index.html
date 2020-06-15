@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        .demo{
+            height: 100vh;
+            width: 100%;
+        }
+        .demo model-viewer{
+            height: 100%;
+            width: 100%;
+
+        }
+        .btn-container{
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        button{
+            border: none;
+            background-color: #edda73;
+            height: 40px;
+            width: 70px;
+            margin: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <model-viewer  id="model" src="RobotExpressive.glb" alt="Robot" skybox-image="park.hdr" auto-rotate camera-controls animation-name="Running" autoplay ar></model-viewer>
+
+    </div>
+    <div class="btn-container">
+        <button onclick="stop()">Stop</button>
+        <button onclick="Run()">Run</button>
+        <button onclick="wave()">Wave</button>
+    </div>
+    
+
+    <script>
+        let animation=document.querySelector("#model");
+
+        function stop(){
+            animation.animationName='none';
+        }
+
+        function Run(){
+            animation.animationName='Running';
+        }
+
+        function wave(){
+            animation.animationName='Wave';
+        }
+
+    </script>
+</body>
+</html>
