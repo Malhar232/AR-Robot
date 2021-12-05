@@ -40,13 +40,13 @@
 </head>
 <body>
     <div class="demo">
-        <model-viewer  id="model" src="scene.glb" alt="Robot" skybox-image="out.hdr" auto-rotate camera-controls animation-name="Running" autoplay ar></model-viewer>
+        <model-viewer  id="model" src="scene.glb" alt="Robot" skybox-image="out.hdr" auto-rotate camera-controls animation-name="" autoplay ar></model-viewer>
 
     </div>
     <div class="btn-container">
-        <button onclick="stop()">Stop</button>
-        <button onclick="Run()">Run</button>
-        <button onclick="wave()">Wave</button>
+        <button onclick="stop()">Idle</button>
+        <button onclick="MoonWalk()">MoonWalk</button>
+        <button onclick="hiphop()">Hip Hop</button>
     </div>
     
 
@@ -57,12 +57,12 @@
             animation.animationName='none';
         }
 
-        function Run(){
+        function MoonWalk(){
             animation.animationName='moonwalk';
         }
 
-        function wave(){
-            animation.animationName='Wave';
+        function hiphop(){
+            animation.animationName='hip_hop';
         }
 
     </script>
