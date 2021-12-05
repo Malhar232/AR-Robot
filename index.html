@@ -40,13 +40,17 @@
 </head>
 <body>
     <div class="demo">
-        <model-viewer  id="model" src="scene.glb" alt="Robot" skybox-image="out.hdr" auto-rotate camera-controls animation-name="" autoplay ar></model-viewer>
-
+        <model-viewer  id="model" src="scene.glb" alt="Robot" skybox-image="out.hdr" auto-rotate camera-controls animation-name="stand" autoplay ar></model-viewer>
+        
     </div>
+    <audio id="audio" src="hiphop.webm"></audio>
+
     <div class="btn-container">
         <button onclick="stop()">Idle</button>
         <button onclick="MoonWalk()">MoonWalk</button>
         <button onclick="hiphop()">Hip Hop</button>
+        <button onclick="run()">Run</button>
+        <button onclick="chill()">Chill</button>
     </div>
     
 
@@ -63,6 +67,14 @@
 
         function hiphop(){
             animation.animationName='hip_hop';
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function run(){
+            animation.animationName='run';
+        }
+        function chill(){
+            animation.animationName='silly_1';
         }
 
     </script>
