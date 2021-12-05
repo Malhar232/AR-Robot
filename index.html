@@ -58,7 +58,7 @@
         let animation=document.querySelector("#model");
 
         function stop(){
-            animation.animationName='none';
+            animation.animationName='stand';
         }
 
         function MoonWalk(){
@@ -67,8 +67,7 @@
 
         function hiphop(){
             animation.animationName='hip_hop';
-            var audio = document.getElementById("audio");
-            audio.play();
+            
         }
         function run(){
             animation.animationName='run';
@@ -76,7 +75,15 @@
         function chill(){
             animation.animationName='silly_1';
         }
-
+        if(animation.animationName='hip_hop'){
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        else{
+            audio.pause();
+            audio.currentTime = 0;
+        }
+        
     </script>
 </body>
 </html>
