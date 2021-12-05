@@ -56,7 +56,7 @@
 
     <script>
         let animation=document.querySelector("#model");
-
+        var audio = document.getElementById("audio");
         function stop(){
             animation.animationName='stand';
         }
@@ -76,7 +76,7 @@
             animation.animationName='silly_1';
         }
         if(animation.animationName==='hip_hop'){
-            var audio = document.getElementById("audio");
+            
             audio.play();
         }
         else{
