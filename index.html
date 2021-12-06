@@ -59,31 +59,33 @@
         var audio = document.getElementById("audio");
         function stop(){
             animation.animationName='stand';
+            audio.pause();
+            audio.currentTime = 0;
         }
 
         function MoonWalk(){
             animation.animationName='moonwalk';
+            audio.pause();
+            audio.currentTime = 0;
         }
 
         function hiphop(){
             animation.animationName='hip_hop';
-            console.log(animation.animationName);
+            audio.play();
 
         }
         function run(){
             animation.animationName='run';
-        }
-        function chill(){
-            animation.animationName='silly_1';
-        }
-        if(animation.animationName=='hip_hop'){
-            console.log("playing...");
-            audio.play();
-        }
-        else{
             audio.pause();
             audio.currentTime = 0;
         }
+        function chill(){
+            animation.animationName='silly_1';
+            audio.pause();
+            audio.currentTime = 0;
+        }
+        
+        
         
     </script>
 </body>
