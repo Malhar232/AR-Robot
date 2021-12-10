@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--  Meta Tags  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--  Import model-viewer  -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <title>Document</title>
+    
+    <title>Spiderman</title>
+    <!--  Styles  -->
     <style>
+        /*  For all elements  */
         *{
             padding: 0;
             margin: 0;
 
         }
+        
+        /*     Parent window that contains the 3D model     */
         .demo{
             height: 100vh;
             width: 100%;
         }
+        /*  3D Model   */
         .demo model-viewer{
             height: 100%;
             width: 100%;
 
         }
+        /*    Button container      */
         .btn-container{
             position: absolute;
             bottom: 50px;
             width: 100%;
             text-align: center;
         }
+        /*   Individual Buttons       */
         button{
             border: none;
             background-color: #333;
@@ -39,13 +50,19 @@
         }
     </style>
 </head>
+    
+<!--  HTML Structure    -->
 <body>
-    <div class="demo">
+    <!--  Parent Div    -->
+    <div class="demo"> 
+        <!--     3D Model     -->
         <model-viewer  id="model" src="scene.glb" alt="Spiderman" skybox-image="out.hdr" auto-rotate camera-controls animation-name="stand" autoplay ar></model-viewer>
-        
     </div>
-    <audio id="audio" src="hiphop.webm"></audio>
+    
+    <!--   Background Music   -->
+    <audio id="audio" src="hiphop.webm" loop></audio>
 
+    <!-- Buttons that trigger functions   -->
     <div class="btn-container">
         <button onclick="stop()">Idle</button>
         <button onclick="MoonWalk()">Walk</button>
@@ -54,21 +71,23 @@
         <button onclick="chill()">Chill</button>
     </div>
     
-
+    <!-- Javascript -->
     <script>
-        let animation=document.querySelector("#model");
-        var audio = document.getElementById("audio");
+        let animation=document.querySelector("#model");  // get the parent window 
+        var audio = document.getElementById("audio");    // get the audio tag
+        
+        // Functions that trigger the animation and audio
         function stop(){
-            animation.animationName='stand';
-            audio.pause();
-            audio.currentTime = 0;
+            animation.animationName='stand'; // change the animation name as mentioned in the glb file
+            audio.pause(); // pause the previous sound
+            audio.currentTime = 0; // set the song time to 0
         }
 
         function MoonWalk(){
             animation.animationName='moonwalk';
             audio.pause();
             audio.currentTime = 0;
-            audio.setAttribute('src', 'moonwalk.mp3');
+            audio.setAttribute('src', 'moonwalk.mp3'); // Change the audio file 
             audio.play();
         }
 
