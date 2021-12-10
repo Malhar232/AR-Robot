@@ -68,24 +68,30 @@
             animation.animationName='moonwalk';
             audio.pause();
             audio.currentTime = 0;
-            audio.src="moonwalk.mp3";
+            audio.setAttribute('src', 'moonwalk.mp3');
             audio.play();
         }
 
         function hiphop(){
             animation.animationName='hip_hop';
+            audio.pause();
+            audio.currentTime = 0;
+            audio.setAttribute('src', 'hiphop.webm');
             audio.play();
-
         }
         function run(){
             animation.animationName='run';
             audio.pause();
             audio.currentTime = 0;
+            audio.setAttribute('src', 'run.mp3');
+            audio.play();
         }
         function chill(){
             animation.animationName='silly_1';
             audio.pause();
             audio.currentTime = 0;
+            audio.setAttribute('src', 'chill.mp3');
+            audio.play();
         }
         
         
